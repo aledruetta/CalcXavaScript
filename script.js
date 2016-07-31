@@ -7,8 +7,8 @@ var keys_id = {'0': 'b0', '1': 'b1', '2': 'b2', '3': 'b3', '4': 'b4', '5': 'b5',
 		'=': 'bequ', '+': 'bplu', '-': 'bmin', 'x': 'btim', '/': 'bdiv'};
 
 var display;
-var str_num = new String();
-var key;
+var str_num;
+var key = null;
 var val = 0;
 var val_tmp = 0;
 var oper_tmp = "";
@@ -21,36 +21,32 @@ function concat(digit_char) {
 	key = document.getElementById(keys_id[digit_char]);
 	changeKey();
 	
-	digit_char = digit_char.toString();
 	display = document.getElementById('visor');
+	str_num = display.value;
 	
-	if (display.value.includes('.'))
+	if (str_num.includes('.'))
 		point = true;
 	else
 		point = false;
 	
 	if (oper_bool) {
-		if (digit_char !== '.') {
-			str_num = "";
-			point = false;
-		}
+		str_num = "";
+		point = false;
 		oper_bool = false;
 	}
-	
-	if (display.value === "0") {
-		if (digit_char === ".") {
-			str_num += digit_char;
-		} else {
-			str_num = digit_char;
+
+	if (digit_char === ".") {
+		if (!point) {
+			if (str_num === "")
+				str_num = "0.";
+			else
+				str_num += digit_char;
 		}
 	} else { 
-		if (digit_char === ".") {
-			if (!point) {
-				str_num += digit_char;
-			}
-		} else {
+		if (str_num !== "0")
 			str_num += digit_char;
-		}
+		else
+			str_num = digit_char;
 	}
 	
 	displayValue(str_num);
