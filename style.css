@@ -11,11 +11,15 @@
 	font-family: 'Roboto', sans-serif;
 }
 div#container {
-	margin: 25px auto;
+	margin: 0 auto;
 	padding-top: 10px;
 	background: #1DE9B6;
 	height: 338px;
-	box-shadow: 1px 1px 2px gray;
+}
+div#display {
+	position: relative;
+	z-index: 10;
+	box-shadow: 0px 2px 5px #454545;
 }
 div#container, div#display {
 	width: 244px;
@@ -56,7 +60,7 @@ button {
 	text-decoration: none;
 }
 input {
-	background: #f2f2f2;
+	background: #f8f8f8;
 	color: #686868;
 	width: 224px;
 	height: 100px;

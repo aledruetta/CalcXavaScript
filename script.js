@@ -66,7 +66,6 @@ function resolve(oper_char) {
 		val_tmp = 0;
 	}
 	else {
-	
 		switch (oper_tmp)
 		{
 			case '+': 
