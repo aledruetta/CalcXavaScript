@@ -30,8 +30,10 @@ function concat(digit_char) {
 		point = false;
 	
 	if (oper_bool) {
-		if (digit_char !== '.')
+		if (digit_char !== '.') {
 			str_num = "";
+			point = false;
+		}
 		oper_bool = false;
 	}
 	
@@ -61,13 +63,13 @@ function resolve(oper_char) {
 	key = document.getElementById(keys_id[oper_char]);
 	changeKey();
 	
+	oper_bool = true;
+	
 	if (oper_char === 'DEL') {
 		val = 0;
 		val_tmp = 0;
 	}
 	else {
-	
-		oper_bool = true;
 	
 		switch (oper_tmp)
 		{
