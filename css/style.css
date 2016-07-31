@@ -1,0 +1,70 @@
+/* 
+    Calculadora em XavaScript
+*/
+
+@import 'https://fonts.googleapis.com/css?family=Roboto:300';
+
+* {
+	padding: 0px;
+	margin: 0px;
+	border: none;
+	font-family: 'Roboto', sans-serif;
+}
+div#container {
+	margin: 0 auto;
+	padding-top: 10px;
+	background: #1DE9B6;
+	height: 338px;
+}
+div#display {
+	position: relative;
+	z-index: 10;
+	box-shadow: 0px 2px 5px #454545;
+}
+div#container, div#display {
+	width: 244px;
+}
+div#numbers {
+	background: #434343;
+	padding: 9px;
+}
+div#numbers div {
+	float: left;
+	width: 55px;
+}
+div#numbers button {
+	background: #434343;
+	color: #fff;
+	width: 55px;
+	height: 55px;
+	font-size: 28px;
+}
+div#operations {
+	background: #636363;
+	width: 46px;
+	padding: 4px 0;
+}
+div#operations button {
+	background: #636363;
+	color: #e3e3e3;
+	width: 46px;
+	height: 46px;
+	font-size: 14px;
+}
+div#numbers, div#operations {
+	position: relative;
+	float: left;
+}
+button {
+	text-align: center;
+	text-decoration: none;
+}
+input {
+	background: #f8f8f8;
+	color: #686868;
+	width: 224px;
+	height: 100px;
+	padding: 0 15px 0 5px;
+	font-size: 48px;
+	text-align: right;
+}
