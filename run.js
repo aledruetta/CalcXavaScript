@@ -6,4 +6,4 @@ if (!appWin || appWin.closed) {
 		location=0,toolbar=0,personalbar=0");
 }
 
-appWin.focus();
+setTimeout("appWin.focus()", 1);
