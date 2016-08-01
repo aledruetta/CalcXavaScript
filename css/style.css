@@ -58,6 +58,8 @@ div#numbers, div#operations {
 button {
 	text-align: center;
 	text-decoration: none;
+	transition: color 0.3s ease-in;
+	transition: font-weight 0.3s ease-out;
 }
 input {
 	background: #f8f8f8;
@@ -66,5 +68,6 @@ input {
 	height: 100px;
 	padding: 0 15px 0 5px;
 	font-size: 48px;
+	transition: font-size 0.3s ease-out;
 	text-align: right;
 }
