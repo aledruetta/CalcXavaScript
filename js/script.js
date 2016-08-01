@@ -7,15 +7,16 @@ var keys_id = {'0': 'b0', '1': 'b1', '2': 'b2', '3': 'b3', '4': 'b4', '5': 'b5',
 		'=': 'bequ', '+': 'bplu', '-': 'bmin', 'x': 'btim', '/': 'bdiv'};
 
 var display;
-var str_num;
 var key = null;
 var val = 0;
 var val_tmp = 0;
-var oper_tmp = "";
 var oper_bool = false;
-var point;
+var oper_tmp = "";
 
 function concat(digit_char) {
+	
+	var str_num;
+	var point;
 	
 	resetKey();
 	key = document.getElementById(keys_id[digit_char]);
