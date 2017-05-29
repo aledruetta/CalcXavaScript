@@ -14,22 +14,22 @@ var oper_bool = false;
 var oper_tmp = "";
 
 function concat(digit_char) {
-	
+
 	var str_num;
 	var point;
-	
+
 	resetKey();
 	key = document.getElementById(keys_id[digit_char]);
 	changeKey();
-	
+
 	display = document.getElementById('visor');
 	str_num = display.value;
-	
+
 	if (str_num.includes('.'))
 		point = true;
 	else
 		point = false;
-	
+
 	if (oper_bool) {
 		str_num = "";
 		point = false;
@@ -43,25 +43,25 @@ function concat(digit_char) {
 			else
 				str_num += digit_char;
 		}
-	} else { 
+	} else {
 		if (str_num !== "0")
 			str_num += digit_char;
 		else
 			str_num = digit_char;
 	}
-	
+
 	displayValue(str_num);
 	val = parseFloat(str_num);
 }
 
 function resolve(oper_char) {
-	
+
 	resetKey();
 	key = document.getElementById(keys_id[oper_char]);
 	changeKey();
-	
+
 	oper_bool = true;
-	
+
 	if (oper_char === 'DEL') {
 		val = 0;
 		val_tmp = 0;
@@ -69,7 +69,7 @@ function resolve(oper_char) {
 	else {
 		switch (oper_tmp)
 		{
-			case '+': 
+			case '+':
 				val += val_tmp;
 				break;
 			case '-':
@@ -85,11 +85,11 @@ function resolve(oper_char) {
 					val = val_tmp;
 				break;
 		}
-		
+
 		oper_tmp = oper_char;
 		val_tmp = val;
 	}
-	
+
 	displayValue(val.toString());
 }
 
@@ -108,7 +108,7 @@ function changeKey () {
 }
 
 function displayValue (value) {
-	
+
 	if (value.length <= 8)
 		display.style.fontSize='48px';
 	else if (value.length > 8 && value.length <= 13)
@@ -117,7 +117,6 @@ function displayValue (value) {
 		display.style.fontSize='22px';
 	else if (value.length > 18)
 		display.style.fontSize='18px';
-	
+
 	display.value = value;
 }
-
