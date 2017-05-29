@@ -6,7 +6,7 @@
   "author": "Alejandro Druetta <aledruetta@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "inline": "rm dist/* && htmlprocessor src/index.html -o dist/index-inline.html && htmlprocessor src/app.html -o dist/app-inline.html",
+    "inline": "rm -rf dist && mkdir dist && htmlprocessor src/index.html -o dist/index-inline.html && htmlprocessor src/app.html -o dist/app-inline.html",
     "minify": "html-minifier -c html-minifier.conf dist/index-inline.html -o dist/index.html && rm dist/index-inline.html && html-minifier -c html-minifier.conf dist/index-inline.html -o dist/index.html && rm dist/index-inline.html",
     "dist": "yarn run inline && yarn run minify"
   },
